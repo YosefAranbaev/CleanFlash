@@ -1,0 +1,971 @@
+/************* Global *************/
+
+*{margin:0; padding:0;}
+
+header, main, nav, aside, footer {
+    display: block;
+}
+
+
+#global {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 150px;
+}
+
+#page-container {
+    min-height: 100vh;
+    position: relative;
+}
+
+#main {
+    margin: 0 auto;
+    padding: 10px 20px 88px 20px;
+}
+
+#main .whiteSpace {
+    width: 100%;
+    height: 140px;
+}
+
+/* Header */
+
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #EEEEEE;
+
+    display: flex;
+    justify-content: flex-end;  
+
+    z-index: 5;
+}
+
+#logo{
+    width: 135px;
+    height: 58px;
+    position: absolute;
+    top: 21px;
+    left: 12px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+
+    display: block;
+}
+
+header .form-control{
+    display: none;
+
+    width: 200px;
+    height: 34px;
+    margin: 33px 0 35px 13px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    padding-left: 30px;
+    background-image: url(../images/search.png);
+}
+
+#search{
+    width: 34px;
+    height: 34px;
+    background-color: transparent; 
+    border:0;   
+    
+    margin: 33px 13px 35px 0;
+}
+
+#search svg{
+    width: 32px;
+    height: 32px;
+}
+
+#profile{
+    width: 34px;
+    height: 34px;
+    margin: 32px 13px 34px 13px;
+
+    display: block;
+}
+
+
+/* Side Menu + Hamburger */
+
+.sidenav {
+    height: 100%; 
+    width: 0;
+    position: fixed;  
+    z-index: 5; 
+    top: 99px; 
+    left: 0;
+    background-color: #f5f5f5;
+    overflow-x: hidden; 
+    padding-top: 15px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav a span {
+    margin-right: 10px;
+    position: relative;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#hamburger {
+    position: fixed;
+    top: 111px;
+    margin-left: 27px;
+
+    z-index: 4;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 384px;
+    margin: 30px auto 20px;
+    background: #f5f5f5;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 0px
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 42px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    font-weight: initial;
+}
+
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease
+}
+
+.accordion .submenu a {
+    font-size: 16px;
+}
+
+.accordion li i.fa-chevron-down {
+    right: 12px;
+    top: 19px;
+    left: auto;
+    right: 13px;
+    font-size: 16px;
+}
+
+.accordion li i.fa:hover {
+    background-color: transparent;
+}
+
+.accordion .down .material-icons {
+    position: relative;
+    right: 42px;
+    top: -20px;
+}
+
+.accordion .material-icons {
+    position: relative;
+    top: -3px;
+}
+
+.accordion li.open .link {
+    color: #000;
+}
+
+.accordion li.open i {
+    color: #000;
+}
+
+.accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.submenu {
+    display: none;
+    background: #fff;
+    font-size: 14px
+}
+
+.submenu li {
+    border-bottom: 1px solid #ccc;
+}
+
+.submenu a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 6px 15px 15px 42px;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease
+}
+
+.submenu a:hover {
+    background: #777;
+    color: #FFF
+}
+
+.accordion .fa {
+    color: #000;
+}
+
+.accordion .fa .material-icons {
+    position: relative;
+    bottom: 3px;
+}
+
+.submenu span.material-icons {
+    position: relative;
+    top: 4px;
+}
+
+.accordion #selected .link{
+    font-weight: bold;
+}
+
+.sidenav .accordion li :hover {
+    background-color: #ccc;
+}
+
+/* Main Navigation */
+
+#mainNav{
+    height: 60px;
+    width: 100%;
+    background: rgb(134, 134, 134);
+    filter: drop-shadow(0px -2px 4px rgba(0, 0, 0, 0.25));
+
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#mainNav a {
+  width: 120px;
+  height: 60px;
+  text-align: center;
+  padding: 10px;
+  color: #C8C8C8;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+#mainNav a.selected {
+  color: #ffffff;
+}
+#mainNav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+}
+
+#home_icon {
+    position: relative;
+    top: 2px;
+}
+
+#closed_icon {
+    position: relative;
+    top: 1px;
+}
+
+#mainNav p {
+    white-space: nowrap;
+}
+
+
+/* Breadcrumbs */
+.breadcrumb{
+  visibility: hidden;
+  height: 40px;
+  font-size: 14px;
+  background-color: #fff;
+  left: 180px;
+  top: 160px;
+  border-radius: 0;
+  width: 100%;
+
+  position: absolute;
+  bottom: 0;
+  
+}
+
+/* Heading */
+
+.header{
+    width: 100%;
+    height: 50px;     
+    background-color: #ffffff;
+    position: fixed;
+    top: 99px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header span{
+    position: absolute;
+    margin: 11px 15px;
+}
+
+.header span:nth-child(3){
+    margin-right: 40px;
+}
+
+.header h1{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 11px;
+}
+
+#desk_h h1 {
+    text-align:start;
+}
+
+div.modal-header {
+    display: block;
+}
+
+div.modal-backdrop.fade {
+    display: relative;
+    z-index: -10;
+}
+
+#desk_h {
+    display: none;
+}
+
+/* Footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 78px;
+    text-align: center;
+
+    background-color: #EEEEEE;
+
+    display: none;
+    z-index: 6;
+}
+
+footer p{
+    margin-top: 50px;
+    font-size: 14px;
+    color: #000000;
+    opacity: 60%;
+}
+
+/************* Events List *************/
+
+#main .cont {
+    display: flex;
+}
+
+#main .list-item{
+    width: 100%;
+    height: 60px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 16px;
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 2px solid #D6D6D6;
+}
+
+#main .material-icons.update {
+    border-bottom: 2px solid #D6D6D6;
+    padding-top: 16px;
+}
+
+#main .material-icons.view {
+    border-bottom: 2px solid #D6D6D6;
+    padding-top: 16px;
+    color: #D6D6D6;
+}
+
+#main .material-icons.update:hover {
+    cursor: pointer;
+    background-color:#D6D6D6;
+}
+
+#main .list-item:hover{
+    background-color: #D6D6D6;
+}
+
+#main .list-item section span:nth-child(3){
+    color: #909090;
+    font-size: 15px;
+}
+
+#main .list-item section:nth-child(2){
+    width: 150px;
+}
+
+#main .list-item .disabled {
+    color: #ccc;
+}
+
+#main iframe {
+    margin-top: 20px;
+}
+
+#main iframe + p{
+    margin-top: 10px;
+    color: green;
+}
+
+/* Filter */
+.filter_box {
+    width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #f5f5f5;
+    position: absolute;
+    right: 15px;
+    top: 137px;
+    border-radius: 7px;
+    white-space: nowrap;
+    display: none;
+}
+
+.filter {
+    background-color: #fff;
+    border-radius: 100%;
+}
+
+/************* Closed Object *************/
+
+.ArrivedOnTime{
+    color: green;
+}
+.After_span{
+    margin-left: 107px;
+}
+.Image_after{
+    margin-left: 30px;
+}
+.Image_before:hover{
+    margin-top: 7px;
+    -ms-transform: scale(1.0); /*IE 9*/
+    -webkit-transform: scale(1.0); /*Safari 3-8*/
+    transform: scale(1.1); 
+}
+.Image_after:hover{
+    margin-top: 7px;
+    -ms-transform: scale(1.0); /*IE 9*/
+    -webkit-transform: scale(1.0); /*Safari 3-8*/
+    transform: scale(1.1); 
+}
+
+/*ObjectPage*/
+.sub_container1{
+    margin-right: 100px;
+} 
+
+.sub_container1 button{
+    margin-bottom: 20px;
+}
+
+/************* Home *************/
+
+.home_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+a.callToaction {
+    display: block;
+    width: 159px;
+    height: 159px;
+    margin: 0 auto;
+
+    box-shadow: 0px 0px 5px rgba(117, 117, 117, 0.8);
+    background: #62c462;
+    color: #ffffff;
+    border-color: #ffffff;
+    border-width: 8px;
+    border-style: solid;
+    font-family: "Blinker";
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.3;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 25px;
+}
+
+a.callToaction:hover {
+    -ms-transform: scale(1.5);
+    -webkit-transform: scale(1.5); 
+    transform: scale(1.1); 
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.frequently {
+    width: 319px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.frequently a {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+	box-shadow: 0px 2px 2px rgba(96, 96, 96, 0.3);
+	background: #eeeeee;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 1px;
+}
+
+.frequently a svg {
+    margin-top: 5px;
+}
+
+.frequently a .freq_type {
+    width: 110px;
+    border-right: 1px solid #555;
+    margin-left: 0;
+}
+
+.frequently a .freq_address {
+    width: 130px;
+}
+
+/* CallToAction */
+
+.keyboard-arrow-right-icon-1 {
+	width: 23px;
+	height: 23px;
+	background: #777777;
+}
+
+
+/************* File *************/
+
+.file{
+    position: relative;
+    margin-top: 10%;
+    z-index: 0;
+}
+
+.asterisk{
+    color: red;
+}
+
+.desc_form, .mob_form {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.desc_form {
+    display: none;
+}
+
+div.row {
+    position: relative;
+    z-index: 0;
+}
+
+.col-md-6 {
+    width: 839px;
+}
+
+.files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;  
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.files:after {  
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+
+    padding: 120px 50px 50px 50px;
+    position: relative;
+
+}
+
+.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+ }
+ 
+input.filefield#img_upload {
+    position: relative;
+}
+
+.form-control {
+    margin: 0;
+}
+
+.color input{ background-color:#f1f1f1;} 
+
+input#inputAddress.form-control, select#inlineFormCustomSelectPref.custom-select.my-1.mr-sm-2 {
+    width: 360px;
+    margin-bottom: 25px;
+}
+
+form {
+    margin-bottom: 25px;
+}
+
+a#return.btn.btn-primary.btn-lg {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.filefield.custom-select.my-1.mr-sm-2 {
+    width: 360px;
+}
+
+/******************************/
+#loginfield{
+    width: 200px;
+}
+.formlabel{
+    margin-top: 20px;
+}
+#frm,.container h1{
+    margin-left: 0px;
+}
+/************profile page**************/
+#profile_template{
+    width: 100%;
+    height: 100%;
+}
+#changepassword{
+    margin-top: 165px;
+}
+
+#delaccount{
+    height: 38px;
+    width: auto;
+    margin-top: 65px;
+    margin-left: 0px;
+}
+.filefield{
+    width: 250px;
+}
+#logout{
+    margin-left: 20px;
+    margin-top: 165px;
+}
+.person-details{
+    margin-top: 30px;
+}
+/************* Desktop properties *************/
+ @media only screen and (min-width: 536px){
+
+    /****************/
+    #delaccount{
+        height: 38px;
+        width: auto;
+        margin-top: 165px;
+        margin-left: 240px;
+    }
+    #changepassword{
+        margin-top: 165px;
+        margin-left: -220px;
+    }
+    
+    #logout{
+        margin-left: -50px;
+        margin-top: 165px;
+    }
+
+    #frm,.container h1{
+        margin-left: 140px;
+    }
+    #loginfield{
+        width: 400px;
+    }
+    /* Global */
+
+    #global {
+        height: 200px;
+    }
+
+    header #search, a.closebtn, #hamburger, #main .whiteSpace{
+        display: none;
+    }
+
+    header .form-control{
+        display: block;
+    }
+
+    #mainNav{
+        top: 100px;
+        filter: none;
+        justify-content: flex-start;
+    }
+
+    #mainNav a:nth-child(3){ 
+      order: 1;
+    }
+
+    #mainNav a:nth-child(2){
+        order: -1;
+        margin-left: 180px;
+    }
+
+    #mainNav a{
+        margin-right: 50px;
+    }
+
+    .sidenav {
+        top: 160px;
+    }
+
+    #mySidenav {
+        width: 180px;
+    }
+
+    #main {
+        margin-left: 180px;
+        padding-top: 10px;
+    }
+
+    .header {
+        position: static;
+        background-color: transparent;
+        margin-top: 200px;
+    }
+
+    .header span {
+        position: fixed;
+        top: 210px;
+        right: 5px;
+    }
+
+    #mob_h {
+        display: none;
+    }
+
+    #desk_h {
+        display: block;
+    }
+
+    .filefield.custom-select.my-1.mr-sm-2, input#inputAddress.form-control, select#inlineFormCustomSelectPref.custom-select.my-1.mr-sm-2 {
+        width: 392px;
+    }
+
+    .breadcrumb{
+        visibility: visible;
+    }
+
+    footer {
+        display: block;
+    }
+
+    /* Events */
+
+    #main .list-item {
+        width: 350px;
+        margin-right:50px;
+    }
+
+    #main .cont .list-item {
+        margin-right: 0;
+    }
+
+    #main .cont{
+        margin-right: 50px;
+    }
+
+    #main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Filter */
+    .filter_box {
+        top: 249px;
+        right: 20px;
+    }
+
+    /* CallToAction */
+
+    a.callToaction {
+        width: 359px;
+        height: 359px;
+        font-size: 58px;
+        padding-top: 80px;
+    }
+
+    .frequently a {
+        margin-bottom: 15px;
+    }
+
+    /* Event type */
+    .tiles {
+        display:flex;
+    }
+
+    .container {
+        font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif; 
+        font-size:18px; 
+        margin:0 auto;
+        width:1024px;
+    }
+ }
+
+ /************* Change the appearance of the upload file input *************/
+@media only screen and (min-width: 840px) {
+
+    /* Form */
+    .desc_form {
+        display: block;
+    }
+
+    .mob_form {
+        display: none;
+    }
+}
+
+span.material-icons:hover {
+    cursor: pointer;
+}
+
+#main .material-icons.view {
+    cursor: default;
+}
+
+@media only screen  and (max-width: 536px) and (min-width: 446px){
+    #delaccount{
+        height: 38px;
+        width: auto;
+        margin-top: 165px;
+        margin-left: 20px;
+    } 
+}
+@media only screen  and (max-width: 526px) and (min-width: 435px){
+    #delaccount{
+        height: 38px;
+        width: auto;
+        margin-top: 165px;
+        margin-left: 10px;
+    }
+}
+@media only screen  and (max-width: 436px) and (min-width: 425px){
+    #delaccount{
+        height: 38px;
+        width: auto;
+        margin-top: 165px;
+        margin-left: 0px;
+    }
+}
+@media only screen  and (max-width: 426px) and (min-width: 424px){
+    #delaccount{
+        margin-top: 65px;
+        margin-left: 0px;
+    }
+}
+@media only screen  and (max-width: 900px) and (min-width: 536px){
+    #delaccount{
+        margin-top: 165px;
+        margin-bottom: 200px;
+        margin-left: 20px;
+    }
+}
+@media only screen  and (max-width: 601px) and (min-width: 535px){
+    #delaccount{
+        margin-top: 65px;
+        margin-left: 0px;
+    }
+}
+@media only screen  and (max-width: 606px) and (min-width: 597px){
+    #delaccount{
+        margin-top: 165px;
+        margin-left: 1px;
+    }
+}
